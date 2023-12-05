@@ -68,16 +68,7 @@ app.post("/cadastroNota", async(req,res)=>{
     const valorunitario = req.body.valorunitario
     const quantidade = req.body.quantidade
 
-    if ( numero == "" || dataemissao == "" || item == "" || valorunitario == "" || quantidade == "" ){
-        return res.status(400).json({error: "preencha todos os campos"})
-    }
-
-    const numeroexiste = await Nota.findOne({numero:numero})
-    if(numeroexiste){
-        return res.status(400).json({error:"Este número já foi cadastrado em outra nota fiscal."})
-    }
-
-
+   
     const notafisc = new Nota({
         numero: numero,
         dataemissao: dataemissao,
