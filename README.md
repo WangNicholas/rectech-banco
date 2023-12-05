@@ -1,1 +1,1 @@
-
+# rectech-banco
